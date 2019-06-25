@@ -22,7 +22,21 @@ def root():
 # これをパタトクカシーーを処理するようにしています。
 def pata():
   # とりあえずAとBをつなぐだけで返事を作っていますけど、パタタコカシーーになるように自分で直してください！
-  pata = request.args.get('a', '') + request.args.get('b', '')
+  a = request.args.get('a', '')
+  b = request.args.get('b', '')
+  pata = ""
+  i = 0 # Overall iterator
+  j = 0 # a string iterator
+  k = 0 # b string iterator
+  while i < (len(a) + len(b)):
+    if i % 2 == 0:
+      pata += a[j]
+      i += 1
+      j += 1
+    else:
+      pata += b[k]
+      i += 1
+      k += 1
   # pata.htmlのテンプレートの内容を埋め込んで、返事を返す。
   return render_template('pata.html', pata=pata)
 
