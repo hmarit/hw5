@@ -29,7 +29,15 @@ def pata():
   j = 0 # a string iterator
   k = 0 # b string iterator
   while i < (len(a) + len(b)):
-    if i % 2 == 0:
+    if j > len(b) and j < len(a):
+      pata += a[j]
+      i += 1
+      j += 1
+    elif k >= len(a) and k < len(b):
+      pata += b[k]
+      i += 1
+      k += 1
+    elif i % 2 == 0:
       pata += a[j]
       i += 1
       j += 1
